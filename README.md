@@ -13,3 +13,14 @@ bun run dev
 ```
 
 Open http://localhost:3000/ with your browser to see the result.
+
+## Helm
+To deploy the application using Helm, run:
+```bash
+helm install node-example -n node-example --create-namespace .
+```
+
+To uninstall the application, run:
+```bash
+helm uninstall node-example -n node-example
+```
