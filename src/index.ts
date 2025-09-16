@@ -7,7 +7,7 @@ app.get("/api/v1/details", () => {
   return {
     time: new Date(),
     hostname: os.hostname(),
-    message: 'Hello from Elysia! 🦊',
+    message: 'Hello from Elysia! 🦊.',
   };
 });
 
