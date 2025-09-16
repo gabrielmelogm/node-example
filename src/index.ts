@@ -7,6 +7,7 @@ app.get("/api/v1/details", () => {
   return {
     time: new Date().toLocaleDateString(),
     hostname: os.hostname(),
+    message: 'Hello from Elysia! 🚀',
   };
 });
 
