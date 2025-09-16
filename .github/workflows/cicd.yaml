@@ -45,7 +45,7 @@ jobs:
         run: |
           echo ${{needs.ci.outputs.commit_id}}
           pip install yq
-          yq -Yi '.image.tag' = "${{needs.ci.outputs.commit_id}}" charts/node-example/values.yaml
+          yq -Yi '.image.tag = "${{needs.ci.outputs.commit_id}}"' charts/node-example/values.yaml
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
