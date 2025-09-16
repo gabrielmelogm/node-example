@@ -5,7 +5,7 @@ const app = new Elysia();
 
 app.get("/api/v1/details", () => {
   return {
-    time: new Date().toLocaleDateString(),
+    time: new Date(),
     hostname: os.hostname(),
     message: 'Hello from Elysia! 🦊',
   };

@@ -1,4 +1,4 @@
-name: ci
+name: CI/CD
 
 on:
   push:
@@ -8,8 +8,8 @@ on:
       - main
 
 jobs:
-  docker:
-    runs-on: self-hosted
+  ci:
+    runs-on: ubuntu-latest
     environment: Production
     steps:
       -
@@ -30,3 +30,17 @@ jobs:
         with:
           push: true
           tags: gabrielmelogm/node-example:latest
+  cd:
+    needs: ci
+    runs-on: self-hosted
+    environment: Production
+    steps:
+      - name: Argocd app sync
+        shell: bash
+        run: |
+          argocd login argocd-server.argocd \
+            --insecure \
+            --grpc-web \
+            --username admin \
+            --password ${{ secrets.ARGOCD_PASSWORD }}
+          argocd app sync argocd/node-app
