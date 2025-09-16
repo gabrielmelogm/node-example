@@ -1,29 +1,23 @@
 replicaCount: 1
-
 image:
   repository: gabrielmelogm/node-example
   pullPolicy: IfNotPresent
-  tag: latest
-
+  tag: 5ac02b524188d149a0b51f2f8b9da49dbf
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
-
 serviceAccount:
   create: false
   automount: true
   annotations: {}
   name: ""
-
 podAnnotations: {}
 podLabels: {}
 podSecurityContext: {}
 securityContext: {}
-
 service:
   type: ClusterIP
   port: 3000
-
 ingress:
   enabled: true
   className: "nginx"
@@ -34,9 +28,7 @@ ingress:
         - path: /
           pathType: Prefix
   tls: []
-
 resources: {}
-
 livenessProbe:
   httpGet:
     path: /api/v1/healthz
@@ -45,13 +37,11 @@ readinessProbe:
   httpGet:
     path: /api/v1/healthz
     port: http
-
 autoscaling:
   enabled: false
   minReplicas: 1
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
-
 volumes: []
 volumeMounts: []
 nodeSelector: {}
