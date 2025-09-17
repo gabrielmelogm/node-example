@@ -3,11 +3,12 @@ import os from "node:os";
 
 const app = new Elysia();
 
-app.get("/api/v1/details", () => {
+app.get("/api/v1/info", () => {
   return {
     time: new Date(),
     hostname: os.hostname(),
     message: 'Hello from Elysia! 🦊',
+    deployedOn: 'kubernetes'
   };
 });
 
