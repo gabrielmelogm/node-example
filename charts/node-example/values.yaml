@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: gabrielmelogm/node-example
   pullPolicy: IfNotPresent
-  tag: 9dc66290e5b58a59f11221ecc22525fde6
+  tag: bbc4591d89899799775834afcb896a0a81
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
