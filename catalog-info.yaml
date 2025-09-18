@@ -5,7 +5,7 @@ metadata:
   description: Uma api com elysia e bun.
   annotations:
     github.com/project-slug: gabrielmelogm/node-example
-  #   backstage.io/techdocs-ref: dir:.
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   owner: development
