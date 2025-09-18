@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: elysia-bun-app
+  description: Uma api com elysia e bun.
+  annotations:
+    github.com/project-slug: gabrielmelogm/node-example
+  #   backstage.io/techdocs-ref: dir:.
+spec:
+  type: service
+  owner: development
+  lifecycle: experimental
